@@ -48,9 +48,9 @@ func (c Calc) Operate(input string, operation string) (int, error) {
 
 func main() {
 	fmt.Println("Enter your input with operation and without spaces, example 23+23")
-	input := readInput()
+	input := ReadInput()
 	fmt.Println("Enter your operation [+, -, *, /]")
-	operator := readInput()
+	operator := ReadInput()
 	processResult(input, operator)
 
 }
@@ -64,7 +64,7 @@ func ReadInput() string {
 
 func processResult(input string, operator string) {
 	c := Calc{}
-	value, err := c.operate(input, operator)
+	value, err := c.Operate(input, operator)
 	if err != nil {
 		fmt.Println(err)
 	} else {
